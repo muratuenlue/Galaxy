@@ -10,7 +10,8 @@ clint.on('ready',() => {
 
   let statuses = statuses[Math.floor(Math.random()*statuses.lenght)];
 
-  client.user.setPresence({ activity: {name:statuses}, status: 'online'});
+  client.user.setPresence({ activity: {yeni ozellik}, status: 'online'});
+  client.user.setPresence({ activity: {selamlar}, status: 'online'});
 
     setInterval(function(){
 
