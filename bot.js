@@ -99,25 +99,7 @@ client.elevation = message => {
   if (message.author.id === ayarlar.sahip) permlvl = 4;
   return permlvl;
 };
-// We need to call the serverPrefixes JSON file
-const serverPrefixes = JSON.parse(fs.readFileSync('Storage/serverPrefixes.json', 'utf8'))
 
-// Listener Event: Runs whenever a message is received.
-bot.on('message', message => {
-
-    // We want to make sure there is a GUILD, and it is not in DMs
-    if (message.channel.type != 'text') return message.channel.send('Please use commands in the server!')
-
-    // Global Settings - We need the prefix to change every time a message is run.
-    db.fetchObject(`guildPrefix_${message.guild.id}`).then(i => { // This fetches the current prefix, if none is supplied it would be an empty string.
-
-        let prefix;
-
-        if (i.text) { // This will run if i.text(exisiting prefix) is defined...
-            prefix = i.text
-        } else { // This will run if i.text(existing prefix) is not defined...
-            prefix = '~' // You can set this to your default prefix
-        }
 client.setInterval(() => {
     let Status = [
         `💻Yeni Güncelleme Yakında`,
