@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const ms = require("ms");
+const client = new Discord.Client();
 
-module.exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args) => {
 
   //!geçicisustur@üye 1s/m/h/d | 1s = 1 saniye , 1m = 1 dakika , 1h = 1 saat, 1d = 1 gün
 
