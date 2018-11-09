@@ -4,14 +4,21 @@ const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
-require('./util/eventLoader')(client);
 
 var prefix = ayarlar.prefix;
 
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
-
+client.setInterval(() => {
+    let Status = [
+        `deneme`,
+        `2`,
+        `3`,
+    ];
+    client.user.setActivity(Status[Math.floor(Math.random() * Status.length)], { "type": "PLAYING" }); 
+    client.user.setStatus('online'); 
+}, 30 * 1000); 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./komutlar/', (err, files) => {
