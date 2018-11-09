@@ -11,7 +11,8 @@ exports.run = (client, msg) => {
 • Sunucular        :: ${client.guilds.size.toLocaleString()}
 • Kanallar         :: ${client.channels.size.toLocaleString()}
 • Discord.JS sürüm :: v${Discord.version}
-• Ping             :: ${client.ping}`);
+• Ping             :: ${client.ping`)}
+• Yapımcı          :: RookieFarak#4104 `);
 };
 
 exports.conf = {
