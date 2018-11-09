@@ -7,7 +7,7 @@ var prefix = ayarlar.prefix;
 
 client.setInterval(() => {
     let Status = [
-        `deneme1`,
+        `deneme`,
         `2`,
         `3`,
     ];
