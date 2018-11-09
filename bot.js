@@ -12,13 +12,14 @@ const log = message => {
 };
 client.setInterval(() => {
     let Status = [
-        `deneme`,
-        `2`,
-        `3`,
+        `Yeni Güncelleme Yakında`,
+        `${client.guilds.size} sunucuda hizmet!`,
+        `b/yardım yaz yardım komutlarına eriş`,
     ];
     client.user.setActivity(Status[Math.floor(Math.random() * Status.length)], { "type": "PLAYING" }); 
     client.user.setStatus('online'); 
-}, 30 * 1000); 
+}, 5 * 1000); 
+
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./komutlar/', (err, files) => {
