@@ -11,7 +11,7 @@ exports.run = (client, message, params) => {
     message.author.sendCode('asciidoc', `= Komut Listesi =\n\n[Komut hakkında bilgi için ${ayarlar.prefix}yardım <komut adı>]\n\n${client.commands.map(c => `${ayarlar.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
   if (message.channel.type !== 'dm') {
     const ozelmesajkontrol = new Discord.RichEmbed()
-    .setColor(0x00AE86)
+    .setColor(#3D85C6)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
     .setDescription('Özel mesajlarını kontrol et. :postbox:');
@@ -29,7 +29,7 @@ exports.run = (client, message, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['h', 'halp', 'help', 'y'],
+  aliases: ['h', 'halp', 'help', 'y','yardim'],
   permLevel: 0
 };
 
