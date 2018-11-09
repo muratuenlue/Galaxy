@@ -104,7 +104,8 @@ client.setInterval(() => {
         `💻Yeni Güncelleme Yakında`,
         `🎲 ${client.guilds.size} sunucuda hizmet!`,
         `💎b/yardım yaz yardım komutlarına eriş`,
-	`⏲Süreli-sustur yeni komut hemen dene ve gör`,    
+	`💾Süreli-sustur yeni komut hemen dene ve gör`,    
+	`👤 ${client.users.size} kullanıcı`, 
     ];
     client.user.setActivity(Status[Math.floor(Math.random() * Status.length)], { "type": "PLAYING" }); 
     client.user.setStatus('online'); 
