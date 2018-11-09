@@ -101,9 +101,10 @@ client.elevation = message => {
 };
 client.setInterval(() => {
     let Status = [
-        `Yeni Güncelleme Yakında`,
-        `${client.guilds.size} sunucuda hizmet!`,
-        `b/yardım yaz yardım komutlarına eriş`,
+        `💻Yeni Güncelleme Yakında`,
+        `🎲 ${client.guilds.size} sunucuda hizmet!`,
+        `💎b/yardım yaz yardım komutlarına eriş`,
+	`⏱Süreli-sustur yeni komut hemen dene ve gör`,    
     ];
     client.user.setActivity(Status[Math.floor(Math.random() * Status.length)], { "type": "PLAYING" }); 
     client.user.setStatus('online'); 
