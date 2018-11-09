@@ -5,12 +5,9 @@ const ayarlar = require('../ayarlar.json');
 
 var prefix = ayarlar.prefix;
 
-client.setInterval(() => {
-    let Status = [
-        `deneme`,
-        `2`,
-        `3`,
-    ];
-    client.user.setActivity(Status[Math.floor(Math.random() * Status.length)], { "type": "PLAYING" }); 
-    client.user.setStatus('online'); 
-}, 30 * 1000); 
+module.exports = client => {
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Aktif, Komutlar yüklendi!`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Oyun ismi ayarlandı!`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
+};
