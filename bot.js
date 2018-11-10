@@ -107,6 +107,7 @@ client.setInterval(() => {
         `💎b/yardım yaz yardım komutlarına eriş`,
 	`💾Süreli-sustur yeni komut hemen dene ve gör`,    
 	`👤 ${client.users.size} kullanıcı`, 
+	    `10 Kasıma Özel Atatürkü anıyoruz`, 
     ];
     client.user.setActivity(Status[Math.floor(Math.random() * Status.length)], { "type": "PLAYING" }); 
     client.user.setStatus('online'); 
