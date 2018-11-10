@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const superagent = require("superagent");
-
+const client = new Discord.Client();
 
 exports.run = async (client,message,args) => {
     
