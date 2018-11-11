@@ -3,7 +3,7 @@ const superagent = require("superagent");
 const ms = require("ms");
 const client = new Discord.Client();
 
-exports.run = async (client, message, args) => {
+exports.run = async (bot, message, args) => {
     
   var rol = message.content.split(" ").slice(1).join(" ");
   let role = message.guild.roles.find("name", `${rol}`)
