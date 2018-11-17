@@ -13,7 +13,7 @@ let mesaj = args.slice(0).join(' ');
   if (mesaj.length < 1) return message.channel.send(new Discord.RichEmbed().setColor("RANDOM").setDescription(':no_entry_sign: :pencil: Tavsiye için bana birşey yazman gerek!'));
   const tavsiye1 = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setDescription(message.author.username + ', :basarili:  Tavsiyeniz bildirildi! Tavsiyenizi bildirdiğiniz için teşekkür ederiz!')
+    .setDescription(message.author.username + ',  Tavsiyeniz bildirildi! Tavsiyenizi bildirdiğiniz için teşekkür ederiz!')
   message.channel.send(tavsiye1);
 const tavsiye = new Discord.RichEmbed()
   .setColor("RANDOM")
