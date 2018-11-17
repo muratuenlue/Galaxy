@@ -100,6 +100,14 @@ client.elevation = message => {
   return permlvl;
 };
 
+client.on("message", msg => {
+    const kufur = ["amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "meme"];
+    if (kufur.some(word => msg.content.includes(word)) ) {
+        msg.delete()
+        msg.reply("Küfür etme krdşm")
+    }
+});
+
 client.setInterval(() => {
     let Status = [
         `💻Yeni Güncelleme Yakında`,
