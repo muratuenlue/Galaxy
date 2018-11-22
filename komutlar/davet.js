@@ -1,25 +1,31 @@
 const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
+const client = new Discord.Client();
 
-var prefix = ayarlar.prefix;
-
-exports.run = (client, message, params) => {
-
-  const embeddavet = new Discord.RichEmbed()
-  .setDescription(`[Bot Davet Linki](  https://discordapp.com/api/oauth2/authorize?client_id=506402962906677271&permissions=8&scope=bot  ) | [Destek Sunucusu](  https://discord.gg/Jg6Dbcr  )\n\n**Ping:** ${Math.round(client.ping)}ms!`)
-  .setColor("#7289DA")
-  .setFooter(`${message.author.username} tarafından istendi.`, message.author.avatarURL)
-
+exports.run = (client, message) => {
+  if (message.channel.type !== 'dm') {
+    const ozelmesajkontrol = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Özel mesajlarını kontrol et. :postbox:');
+    message.channel.sendEmbed(ozelmesajkontrol) }
+	const pingozel = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('İşte Davet Linkim: https://discordapp.com/api/oauth2/authorize?client_id=506402962906677271&permissions=8&scope=bot Buda Bizim Sunucunun :) https://discord.gg/bmbSrqu');
+    return message.author.sendEmbed(pingozel)
+};
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['d', 'botu-ekle', 'bote', 'sunucuya-ekle'],
+  aliases: ['botu ekle', 'botu davet et', 'botuekle', 'invite'],
   permLevel: 0
 };
 
 exports.help = {
   name: 'davet',
-  description: 'Botun davet linkini atar',
+  description: 'Botun davet linkini gönderir.',
   usage: 'davet'
 };
