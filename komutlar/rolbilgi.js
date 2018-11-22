@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const superagent = require("superagent");
+
 exports.run = async (client,message,args) => {
 
   var amount = message.content.split(" ").slice(1).join(" ");
@@ -24,7 +25,7 @@ exports.run = async (client,message,args) => {
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
+  guildOnly: false,
   aliases: ['rolinfo', 'rbilgi'],
   permLevel: 0
 };
