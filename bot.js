@@ -110,7 +110,7 @@ client.on("message", msg => {
 
 client.setInterval(() => {
     let Status = [
-        `💻Yeni Güncelleme Yakında`,
+        `🔸Yardım yenileniyor mu?`,
         `🎲 ${client.guilds.size} sunucuda hizmet!`,
         `💎b/yardım yaz yardım komutlarına eriş`,
 	`👤 ${client.users.size} kullanıcı`, 
