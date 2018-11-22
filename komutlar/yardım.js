@@ -10,7 +10,7 @@ exports.run = (client, message, params) => {
   .setThumbnail("https://cdn.discordapp.com/attachments/506057365599027220/515225400633458689/PPSunucu.png")
   .setDescription(`[Bot Davet Linki](  https://discordapp.com/api/oauth2/authorize?client_id=506402962906677271&permissions=8&scope=bot  ) | [Destek Sunucusu](  https://discord.gg/Jg6Dbcr  )\n\n**Ping:** ${Math.round(client.ping)}ms!`)
   .setColor("#7289DA")
-  .addField("**BD BOT • Komutlar**", `▫️ **|  b/eğlencek:** Eğlence komutlarını gösterir. \n▫️ **|  b/modk:** Moderasyon komutlarını gösterir. \n▫️ **|  b/anak:** Temel komutları gösterir. \n\n **|  Yapımcı:** RookieFarak`)
+  .addField("**BD BOT • Komutlar**", `▫️ **|  b/eğlencek:** Eğlence komutlarını gösterir. \n▫️ **|  b/modk:** Moderasyon komutlarını gösterir. \n▫️ **|  b/anak:** Temel komutları gösterir. \n\n ** Yapımcı:** RookieFarak`)
   .setFooter(`${message.author.username} tarafından istendi.`, message.author.avatarURL)
 
   if (!params[0]) {
