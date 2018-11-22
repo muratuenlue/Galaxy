@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const superagent = require("superagent");
 
-exports.run = async (client,message,args) => {
+exports.run = (client, message, args) => {
 
   var amount = message.content.split(" ").slice(1).join(" ");
   let role = message.guild.roles.find("name", `${amount}`)
