@@ -119,14 +119,19 @@ client.setInterval(() => {
     client.user.setStatus('online'); 
 }, 5 * 1000); 
 
+const db = require('quick.db')
 client.on("guildMemberAdd", member => {
-    let otorol = JSON.parse(fs.readFileSync("./sunucuya-ozelayarlar/otorol.json", "utf8"));
-  
-    var role = otorol[member.guild.id].role;
-  const rol = member.guild.roles.find('name', role);
-    if (!rol)
-    member.addRole(role);
-});
+db.fetch(`autoRole_${member.guild.id}`).then(otorol => {
+if(!otorol || otorol.toLowerCase() === 'yok') return;
+else {
+try {
+member.addRole(member.guild.roles.find(`name`, otorol))
+}catch (e) {
+console.log('Rol verilemedi sunucu idsi', member.guild.id)
+}
+}
+})
+})
 var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
 // client.on('debug', e => {
 //   console.log(chalk.bgBlue.green(e.replace(regToken, 'that was redacted')));
