@@ -120,7 +120,7 @@ client.setInterval(() => {
 }, 5 * 1000); 
 
 client.on("guildMemberAdd", member => {
-    let otorol = JSON.parse(fs.readFileSync("./sunucuyaozelayarlar/otorol.json", "utf8"));
+    let otorol = JSON.parse(fs.readFileSync("./sunucuya-ozelayarlar/otorol.json", "utf8"));
   
     var role = otorol[member.guild.id].role;
   const rol = member.guild.roles.find('name', role);
