@@ -1,40 +1,19 @@
-const fs = require("fs");
-const Discord = require("discord.js");
+const db = require('quick.db')
 
-exports.run = async (client, message, args) => {
-    if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("Bu Komutu Kullanmak İçin `Rolleri Yönet` Yetkisine sahip olmalısın.");
-    let otorol = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/otorol.json", "utf8"));
-    if (!args[0]) { 
-        otorol[message.guild.id] = {
-            role: 0
-        };
-        fs.writeFile("./sunucuyaözelayarlar/otorol.json", JSON.stringify(otorol), (err) => {
-            if (err) console.log(err);
-        });
-        message.reply("Lütfen bir rol ismi yazın.");
-   }
-    if (args[0]) { 
-        let roles = args.join(" ");
-        let role = message.guild.roles.find("name", roles);
-        otorol[message.guild.id] = {
-            role: role.id
-        };
-        fs.writeFile("./sunucuyaözelayarlar/otorol.json", JSON.stringify(otorol), (err) => {
-            if (err) console.log(err)
-        });
-        message.reply(`Otorol Ayarlandı: **${role.name}**`);
-    }
+module.exports.run = async (bot, message, args) => {
+
+  if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply('`ROLLERİ_YÖNET` yetkisine sahip değilsin!')
+  if (!args.join(" ").trim()) return message.channel.send('Geçerli bir rol ismi giriniz !otorol <rol-ismi>')
+  
+
+  
+  db.set(`autoRole_${message.guild.id}`, args.join(" ").trim()).then(otorol => {
+    if (!message.guild.roles.find(`name`, otorol.text)) return message.channel.send("Rol bulunamadı")
+      message.channel.send(`Otorol Rolü Başarıyla **${otorol}** olarak ayarlandı!`)
+    
+  })
+  
 }
-
-exports.conf = {
- enabled: true,
- guildOnly: false,
- aliases: ['otorol', 'oto-rol', 'oto-rol-ayarla'],
- permLevel: 0
-};
-
-exports.help = {
- name: 'Otorol',
- description: 'Sunucuya gelenlere otomatik rol verir',
- usage: 'otorol <rol>'
-};                                      
+module.exports.help = {
+  name:"otorol"
+}
