@@ -10,7 +10,7 @@ exports.run = (client, message, params) => {
   .setThumbnail("https://cdn.discordapp.com/attachments/506057365599027220/515225400633458689/PPSunucu.png")
   .setDescription(``)
   .setColor("#7289DA")
-  .addField("**BD BOT •Eğlence Komutları**", `▫️ **|  b/atatürk:** Atatürk resmi atar. \n▫️ **|  b/koş:** Koşarsınız \n▫️ **|  b/yaz:** Yazdığınız şeyi yazmanızı sağlar. \n▫️ **|  b/yumruh-at:** Yumruk atmanızı sağlar.\n▫️ **|  b/çayaşekerat:** Çaya Şeker Atar.\n▫️ **|  b/çayiç  :** Çay İçersin.\n▫️ **|  b/banned  :** Dene ve gör :D \n▫️ **b/çekiç  :** çekiç atarsınız.\n▫️ **b/herkesebendençay  :** Herkese Çay Verir\n▫️ **b/slots  :** slot oyunu oynarsınız.\n\n ** Yapımcı:** RookieFarak`)
+  .addField("**BD BOT •Eğlence Komutları**", `▫️ **|  b/atatürk:** Atatürk resmi atar. \n▫️ **|  b/koş:** Koşarsınız \n▫️ **|  b/yaz:** Yazdığınız şeyi yazmanızı sağlar. \n▫️ **|  b/yumruh-at:** Yumruk atmanızı sağlar.\n▫️ **|  b/çayaşekerat:** Çaya Şeker Atar.\n▫️ **|  b/çayiç  :** Çay İçersin.\n▫️ **|  b/banned  :** Dene ve gör :D \n▫️ **|  b/çekiç  :** çekiç atarsınız.\n▫️ **|  b/herkesebendençay  :** Herkese Çay Verir\n▫️ **|  b/slots  :** slot oyunu oynarsınız.\n\n ** Yapımcı:** RookieFarak`)
   .setFooter(`${message.author.username} tarafından istendi.`, message.author.avatarURL)
 
   if (!params[0]) {
