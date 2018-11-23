@@ -1,6 +1,6 @@
 const db = require('quick.db')
 
-module.exports.run = async (bot, message, args) => {
+exports.run = async (bot, message, args) => {
 
   if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply('`ROLLERİ_YÖNET` yetkisine sahip değilsin!')
   if (!args.join(" ").trim()) return message.channel.send('Geçerli bir rol ismi giriniz !otorol <rol-ismi>')
@@ -14,6 +14,6 @@ module.exports.run = async (bot, message, args) => {
   })
   
 }
-module.exports.help = {
+exports.help = {
   name:"otorol"
 }
